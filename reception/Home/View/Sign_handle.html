@@ -1,0 +1,37 @@
+<include file="pub:header" />
+        <article class="login-handle clearfix">
+            <div class="handle-text">
+                <if condition="$output.judge_code == true">
+                    <img src="__IMG__/twbb-true.png" title="<{$output.title}>" alt="<{$output.title}>" />
+                <else />
+                    <img src="__IMG__/twbb-false.png" title="<{$output.title}>" alt="<{$output.title}>" />
+                </if>
+                <div class="output"><{$output.title}></div>
+                <if condition="$output.judge_code == false">
+                    <div class="error"><{$output.error_str}></div>
+                </if>
+                <div class="jump">
+                    <p class="waiting_time"><span><{$output.waiting_time}></span>秒后自动跳转</p>
+                    <a href="<{$output.jump_url}>" title="马上跳转" class="newjump">马上跳转</a>
+                </div>
+            </div>
+        </article>
+    <include file="pub:footer" />  
+    <script>
+    $(function(){
+        var rnum = 0;
+        setInterval('reciprocal()',1000);
+    });
+    // 倒数函数
+    function reciprocal(dizhi){
+        rnum = $('.waiting_time span').text();
+        rnum = rnum - 1;
+        $('.waiting_time span').text(rnum);
+        var dizhi = $('.newjump').attr('href');
+        if (rnum == 0 ) {
+             window.location.href = dizhi;
+        };
+    };
+    </script>
+</body>
+</html>

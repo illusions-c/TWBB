@@ -1,0 +1,57 @@
+﻿#	用户表
+#	author:ben;
+#	2016/2/20
+#	参数：用户id（唯一标识符），用户名，用户密码（经过MD5加密），注册时间，上一次登录时间，上一次登录ip，本次登录时间，本次登录ip，邮箱，手机，头像地址和是否被锁定,判断是否为羊头。
+
+CREATE TABLE twbb_user (
+	uid int primary key auto_increment,
+	username varchar(10) not null ,
+	userpw varchar(32) not null,
+	registertimes int(10) not null default 0,
+	lasttimes int(10) not null default 0,
+	lastip varchar(15) not null default "",
+	thistimes int(10) not null DEFAULT 0,
+	thisip varchar(15) not null default "",
+	email varchar(20) DEFAULT "",
+	phone int(11) DEFAULT 0,
+	avatar varchar(50) DEFAULT '',
+	locking int(2) default 0,
+	is_sheep tinyint(1) default 0 ,   
+)engine myisam charset utf8;
+
+#	羊毛表
+#	author:ben;
+#	2016/2/24
+#	参数：rid,uid,账号，平台名，投资金额，投资日期，到期时间，期限，平台返款，羊头返利，平台是否回款，羊头是否已经返款，记录时间和是否删除
+#	
+
+CREATE TABLE twbb_wool_record (
+	rid int primary key auto_increment,
+	uid int not null,
+	account varchar(25) not null ,
+	Platform varchar(20) not null ,
+	investment int(6) not null default 0,
+	investment_date int(10) not null ,
+	due_time int(10) not null,
+	term int(10) not null default 0,
+	platform_back int(6) not null DEFAULT 0,
+	sheep_rebate int(6) not null default 0,
+	is_platform_back tinyint(1) DEFAULT 0,
+	is_sheep_rebate tinyint(1) DEFAULT 0,
+	recording_time int(10) default 0,
+	record_delete tinyint(1) default 0
+)engine myisam charset utf8;
+
+#	用户帐号表
+#	author:ben;
+#	2016/02/26 16:21:21
+#	参数：aid，uid，帐号名，是否删除。
+#	
+
+CREATE TABLE twbb_wool_accounts (
+	aid int primary key auto_increment,
+	uid int not null ,
+	accounts_name varchar(20) not null default '',
+	adddate int(10) not null default 0,
+	accounts_delete tinyint(1) default 0
+)engine myisam charset utf8;

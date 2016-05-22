@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* 字体 */
+@font-face {
+    font-family: 'BlackLightning';
+    src: url('../font/BlackLightning.ttf') , format('truetype');
+}
+/*
+ *  author:ben;
+ *  登录界面
+ *  time:10/50/21;
+*/
+body{font-size:12px; line-height:24px; font-family:"Microsoft YaHei","微软雅黑"; color:#656565; background-size:100%; background: -moz-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -webkit-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -o-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -ms-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: linear-gradient(top, #87CEFF 0%, #FFF0F5 100%);}
+.login-back { background-color:#000;} 
+.LCXZS {position:relative; min-width:1200px; }
+.LCXZS .header {height:40px; line-height:40px; background-color:#f0f4f7;}
+.LCXZS .center {width:960px; margin:0 auto; font-size:14px; color:#656565; }   /* 这里考虑到并没有太多内容，所以暂时定为960宽度 */
+.LCXZS .header .center .logo {display:inline-block; float:left; color:#656565;}
+.LCXZS .header .center .logo h1 {float:left; font-size:20px; font-weight:normal; margin-left:5px; font-family:BlackLightning;}
+.LCXZS .header .center .logo img {float:left; margin-top:5px;}
+.LCXZS .header .center .user-information {float:right;}
+.LCXZS .header .center .user-information a {display:inline-block; float:left; width:80px; font-size:14px; color:#656565; text-align:center;  }
+/*公共的部分内容*/
+.LCXZS .twbb-cont , .LCXZS .form-cont {float:left; background-color:#ffffff; padding:35px; width:789px;  height:738px; border:1px solid #e5e5e5; border-left:none; border-top-right-radius:10px; border-bottom-right-radius:10px;}
+/**/
+.LCXZS .login {position:relative; float:none; width:280px; margin:10% auto; border-radius:10px; height:210px;} 
+.LCXZS .login.form-cont .form-input input {width:180px;}
+.LCXZS .form-cont li {margin-bottom:20px; height:40px; line-height:40px; font-size:14px; }
+.LCXZS .form-cont .form-input .form-title ,
+.LCXZS .form-cont .form-select .form-title ,
+.LCXZS .form-choice .form-title {float:left; width:70px;}
+.LCXZS .form-choice .choice div {float:left; width:60px; height:35px; line-height:35px; text-align:center; border:none; margin-right:20px; background-color:red; color:#ffffff; border-radius:5px; cursor:pointer; }
+.LCXZS .form-choice .choice div:last-child {margin-right:0px;}
+.LCXZS .form-choice .choice div.choice-select {background-color:#33cc66;}
+.LCXZS .form-cont .form-input input {float:left; width:200px; font-size:14px; padding-left:20px; border:1px solid #999999; height:32px; line-height:32px; margin-top:2px;}
+.LCXZS .form-cont .form-choice .choice {float:left;}
+.LCXZS .form-cont .form-input .form-prompt {float:left; max-width:385px; margin-left:15px; height:40px; line-height:40px; color:red;}
+.LCXZS .login .login-touxiang {display:inline-block; position:absolute; top:-50px; left:130px; background-color:#ffffff; border-radius:50%; width:90px; height:90px;}
+.LCXZS .login ul {margin-top:12px;}
+.LCXZS .form-cont .form-submit {margin:20px auto 0; width:190px;}
+.LCXZS .form-cont .form-submit input {float:left; width:80px; border:none; margin-right:30px; text-align:center; font-size:18px; height:45px; line-height:45px; color:#ffffff; background-color:red; cursor:pointer; border-radius:5px;}
+.LCXZS .form-cont .form-submit input:last-child {margin-right:0px;}
+.LCXZS .form-cont .form-submit input[type=submit] {background-color:#33cc66;}
+.LCXZS .margin-30 {margin-top:30px; margin-bottom:30px;}
+.LCXZS .wool-add .form-choice {margin:25px 0;}
+.LCXZS .login .new-register {clear:both; font-size:12px; line-height:24px; color:#CDAF95; text-align:center; margin-top:20px;}
+.LCXZS .login .new-register a {font-size:12px; color:#9ACD32; }
+/* 登录界面end */
+/* 
+ * 注册页面
+ * author:ben;
+ * 2016/03/10 15:51:22
+*/
+.LCXZS .center.sign-register {position:relative; width:527px;}
+.LCXZS .center.sign-register .sign-register-form {border-radius:10px; width:365px; border:none; height:auto; padding-left:80px; padding-right:80px;}
+.LCXZS .center.sign-register .sign-register-form .form-input input {margin-left:10px; width:252px;}
+.LCXZS .center.sign-register .sign-register-form .form-choice .choice div {width:101px;}
+.LCXZS .center.sign-register .sign-register-form .form-submit input {width:120px; margin-right:20px;}
+.LCXZS .center.sign-register .sign-register-form .form-submit {width:275px; margin:30px auto 10px;}
+.LCXZS .center.sign-register .sign-register-form .form-submit input[type=reset] {float:right; margin-right:0px;}
+.LCXZS .center.sign-register .sign-register-form .form-select select {margin-left:10px; width:274px; padding-left:20px;height:35px;}
+/* 注册页面 */
+/*
+ *  登录处理页面
+ *  author:ben;
+ *  2016/02/26 11:11:03
+*/
+.login-handle {position:relative; width:330px; margin:10% auto; padding:25px; border:1px solid #e5e5e5; background-color:#ffffff; border-radius:10px;}
+.login-handle .handle-text img {display:block; margin:10px auto; width:100px; height:100px;}
+.login-handle .handle-text .output {margin-top:10px; font-size:20px; line-height:40px; color:#565656; text-align:center;}
+.login-handle .handle-text .jump {text-align:center; height:40px; line-height:40px; width:160px; margin:10px auto 0;}
+.login-handle .handle-text .jump .waiting_time {float:left; font-size:14px; }
+.login-handle .handle-text .jump .waiting_time span {color:red;}
+.login-handle .handle-text .jump .newjump {float:left; margin-left:10px; font-size:14px;}
+.login-handle .handle-text .error {font-size:14px; line-height:30px; color:red; text-align:center; }
+/* 登录处理页面end */
+/*
+ *  author:ben;
+ *  添加羊毛记录
+ *  2016/02/15 17:11:59
+*/
+.LCXZS article {background-color:#ffffff;}
+.LCXZS .center .nav {float:left; width:100px; background-color:#f0f4f7; height:750px; padding:30px 0; border-top-left-radius:10px; border-bottom-left-radius:10px;}
+.LCXZS .center .nav .user img {display:block; margin:0 auto; border-radius:50%;}
+.LCXZS .center .nav ul {margin-top:40px;}
+.LCXZS .center .nav ul li {height:65px; margin-bottom:15px;}
+.LCXZS .center .nav ul li img {display:block; margin:0 auto; width:45px; height:45px; border:2px solid ; border-radius:5px; padding:8px;} 
+.LCXZS .center .form-cont {width:659px; height:758px; padding:25px 100px 25px 100px;}
+.LCXZS .center .form-cont h1 {font-size:20px; line-height:40px; font-weight:normal; text-align:center;}
+.LCXZS .center .form-cont ul {margin-top:40px;}
+.LCXZS .wool-add .form-input {height:48px; line-height:48px; margin-bottom:25px;}
+.LCXZS .wool-add .form-select {margin-bottom:25px;}
+.LCXZS .wool-add .form-input .form-title ,
+.LCXZS .wool-add .form-select .form-title ,
+.LCXZS .wool-add .form-choice .form-title {width:150px; margin-right:20px; text-align:right; height:48px; line-height:48px;}
+.LCXZS .wool-add .form-input input,
+.LCXZS .wool-add .form-select select {width:278px; height:40px; line-height:40px;}
+.LCXZS .wool-add .form-select select {float:left; width:300px; height:42px; line-height:42px; padding-left:20px; border:1px solid #999999; }
+.LCXZS .wool-add .sheep-rebate-choice .choice div {width:140px; height:40px; line-height:40px;}
+.LCXZS .wool-add .form-cont .form-submit {margin-left:170px; margin-top:30px; }
+.LCXZS .wool-add .form-cont .form-submit input {border-radius:5px;}
+.laydate_box {z-index:100;}
+/* 添加羊毛记录end */
+/*
+ *  author:ben;
+ *  弹出信息
+ *  2016/02/16 16:09:19
+*/
+.propose {position:fixed; top:0px; height:100%; width:100%; z-index:10;}
+.propose .propose-back {position:absolute; top:0px; left:0px; background-color:#000000; opacity:0.7; height:100%; width:100%;}
+.propose .propose-text {display:table; position:relative; top:35%; margin:0 auto; padding:15px 25px; background-color:#ffffff; z-index:11; }
+.propose .propose-text .propose-pub div ,
+.propose .propose-text .propose-pub p {font-size:14px; text-align:center; line-height:28px;}
+.propose .propose-text .propose-pub h3 {font-size:18px; text-align:center; line-height:40px; height:40px; font-weight:normal; margin-bottom:10px;}
+.propose .propose-text .propose-input input {margin-top:10px; width:130px; height:28px; line-height:28px; padding-left:15px;}
+.propose .propose-text .propose-input span {margin-left:10px;}
+.propose .propose-text .propose-input p {color:red; text-align:left; margin-top:10px;}
+.propose .propose-text .propose-input .propose-confirm {display:block; width:100px; height:40px; margin-top:20px; line-height:40px; background-color:red; color:#ffffff; font-size:14px; text-align:center; margin:20px auto 0; border-radius:5px; }
+.propose .propose-text .propose-input .propose-confirm:hover {text-decoration:none;}
+.propose .propose-text .propose-pub div.propose-result-button {margin:10px auto; width:; margin-top:20px;}
+.propose .propose-text .propose-pub div.propose-result-button a {display:inline-block; width:80px; text-align:center; height:40px; line-height:40px; font-size:14px; background-color:#33cc66; color:#ffffff; border-radius:5px; text-decoration:none; margin-right:10px; }
+.propose .propose-text .propose-pub div.propose-result-button a:last-child {margin-right:0px; background-color:red;}
+.propose .propose-text .propose-result li {height:40px; line-height:40px;}
+.propose .propose-text .propose-result li div {float:left; width:115px; height:40px; line-height:40px; text-align:right; margin-right:10px;}
+.propose .propose-text .propose-result li p {float:left; height:40px; line-height:40px;}
+.propose .propose-text .propose-result {min-width:250px;}
+.propose .propose-text .propose-result .propose-result-table td {border:1px solid #dedede; width:115px; line-height:40px; height:40px; text-align:center; font-size:14px;}
+.propose .propose-text .propose-result .propose-result-table .table-title td {border-top:none;}
+.propose .propose-text .propose-result .propose-result-table .table-title {background-color:#ff7272; color:#ffffff;}
+.propose .propose-text .propose-result .propose-result-table .table-title td:first-child {border-top-left-radius:5px; border:none;}
+.propose .propose-text .propose-result .propose-result-table .table-title td:last-child {border-top-right-radius:5px; border:none;}
+/* 弹出信息end */
+/*
+ * 羊毛首页
+ * author:ben;
+ * 2016/03/03 09:31:28
+*/
+.LCXZS .wool-index .wool-index-text .wool-data-table {padding-top:20px; border-top:1px dashed #e5e5e5;}
+.LCXZS .wool-index .wool-index-text .wool-data-table #wool-last12 {height:300px; } 
+.LCXZS .wool-index .wool-index-text .wool-data-table .wool-text {float:left; width:300px; margin-left:35px;}
+.LCXZS .wool-index .wool-index-text .wool-data-table .wool-text li {border:1px solid #e5e5e5; text-align:center; font-size:26px; line-height:73px; height:73px;}
+.LCXZS .wool-index .wool-index-text .wool-data-table .wool-text li div {float:left; width:148px; font-size:16px;}
+.LCXZS .wool-index .wool-index-text .wool-data-table .wool-text li div:first-child {border-right:1px solid #e5e5e5;}
+.LCXZS .wool-index .wool-index-text .total-data {float:left; width:350px;}
+.LCXZS .wool-index .wool-index-text .total-data #total-data-text {margin-top:20px; }
+.LCXZS .wool-index .wool-index-text .total-data #total-data-text ul {-moz-border-radius: 15px; -webkit-border-radius: 15px; border-radius:15px;}
+.LCXZS .wool-index .wool-index-text .total-data #total-data-text div {width:116px; font-size:14px; height:32px; line-height:32px; font-weight:normal; text-align:center; color:#ffffff;}
+.LCXZS .wool-index .wool-index-text .total-data #total-data-text li {float:left; width:116px; background-color:rgb(255, 116, 116); border-right:1px solid #ffffff;}
+.LCXZS .wool-index .wool-index-text .total-data #total-data-text li:last-child {border-right:none;}
+.LCXZS .wool-index .wool-index-text .total-data #total-data-text li.platform {background-color:#6A5ACD;}
+.LCXZS .wool-index .wool-index-text .total-data #total-data-text li.sheep {background-color:rgb(43, 144, 143);}
+.LCXZS .wool-index .wool-index-text .total-calendar {padding-bottom:20px;}
+.LCXZS .wool-index .wool-index-text .total-data #total-data-text div.total-data-percentage {height:50px; line-height:50px; font-size:20px;}
+.LCXZS .wool-index .wool-index-text .calendar {float:left; width:420px; margin-left:19px;}
+.LCXZS .wool-index .wool-index-text .calendar .calendar-title {font-size:16px; height:34px; line-height:34px; text-align:center;}
+.LCXZS .wool-index .wool-index-text .wool-index-button {margin-bottom:20px; }
+.LCXZS .wool-index .wool-index-text .wool-index-button a {display:inline-block; float:left; width:200px; height:34px; line-height:34px; font-size:16px; text-align:center; background-color:red; color:#ffffff; border-radius:10px; margin-left:75px;}
+.LCXZS .wool-index .wool-index-text .wool-index-button a:hover {text-decoration:none;}
+.LCXZS .wool-index .wool-index-text .wool-index-button a:last-child {float:right; margin-right:108px;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar {float:left; width:389px; margin-left:50px;}
+.LCXZS .wool-index .twbb-cont .calendar .calendar-title {font-size:16px; line-height:40px; line-height:40px; text-align:center;}
+/* 从这里开始是日历的css，当然如果要真的当插件要将这些css放在js中，或者将这些前面的关联不要了 */
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice {height:40px; line-height:40px; border:1px solid #e5e5e5; border-bottom:none; padding-top:5px; padding-bottom:2px;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice div {float:left; width:40px; font-size:14px; color:#565656; height:40px; line-height:40px;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice div.last {margin-left:10px; background:url(../img/wool/calendar-left.png) no-repeat 5px 5px; cursor:pointer; }
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice div.next {float:right; margin-right:10px; background:url(../img/wool/calendar-right.png) no-repeat 5px 5px; cursor:pointer; }
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice div.calendar-today {background:url(../img/wool/calendar-today.png) no-repeat 5px 5px; cursor:pointer;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice .calendar-y-choice ,
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice .calendar-m-choice {width:100px; text-align:right;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice .calendar-m-choice {width:70px; margin-right:10px;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice .calendar-y-choice {margin-left:47px;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice .calendar-y-choice span ,
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-ymchoice .calendar-m-choice span {font-size:20px; margin-right:10px;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-table td {width:60px; height:44px; line-height:44px; padding-right:10px; text-align:right; font-size:14px; border:1px solid #e5e5e5; border-bottom:none; border-right:none; cursor:pointer;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-table td:nth-child(7n) {border-right:1px solid #e5e5e5;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-table tr:last-child {border-bottom:1px solid #e5e5e5;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-table td.due-time-select {background:url(../img/wool/sign.png) no-repeat 5px 5px;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-table td.today {background-color:#F0FFFF;}
+.LCXZS .wool-index .twbb-cont .total-calendar .calendar #calendar-text .calendar-table .calendar-week-title td {cursor:default;}
+
+/* 羊毛首页end */
+/*
+ * 羊毛列表
+ * author:ben;
+ * 2016/03/15 15:48:24
+*/
+.LCXZS .wool-lists-text h1 {text-align:center; font-size:36px; line-height:50px; font-weight:normal; font-family:'BlackLightning';}
+.LCXZS .wool-lists-text .wool-lists-table { margin-top:30px;}
+.LCXZS .wool-lists-text .wool-lists-table tr th {font-weight:normal; }
+.LCXZS .wool-lists-text .wool-lists-table tr th , 
+.LCXZS .wool-lists-text .wool-lists-table tr td {width:100px; text-align:center; border:1px solid #e5e5e5; font-size:12px; line-height:24px; padding:7px 0; border-right:none;}
+.LCXZS .wool-lists-text .wool-lists-table tr td {border-top:none;}
+.LCXZS .wool-lists-text .wool-lists-table tr th:last-child , 
+.LCXZS .wool-lists-text .wool-lists-table tr td:last-child {border-right:1px solid #e5e5e5;}
+.LCXZS .wool-lists-text .wool-lists-table tr .expire {color:red;}
+.LCXZS .wool-lists-text .wool-lists-table tr .expire::first-line {color:#656565;}
+.LCXZS .wool-lists-text .wool-lists-table .page {text-align:center; height:32px; line-height:32px; margin-top:20px; }
+.LCXZS .wool-lists-text .wool-lists-table .page > div * {display:inline-block; font-size:14px; width:30px; height:30px; margin:0 5px; border-radius:5px; color:#3d3d3d;}
+.LCXZS .wool-lists-text .wool-lists-table .page > div .current {background-color:red; color:#ffffff;}
+.LCXZS .wool-lists-text .wool-lists-table .lists-empty {font-size:20px; line-height:40px; text-align:center; }
+.LCXZS .wool-lists-text .wool-lists-table .lists-empty a {color:red;}
+.LCXZS .wool-lists-text .wool-lists-table tr td.operation {cursor:pointer;}
+.LCXZS .wool-lists-text .wool-lists-table tr td.operation:hover {color:red;}
+.LCXZS .propose .propose-pub .propose-operation {margin:20px 0;}
+.LCXZS .propose .propose-pub .propose-operation div {float:left; width:100px; font-size:14px; line-height:40px; height:40px; margin-right:25px; text-align:center; background-color:#3C6; color:#ffffff; border-radius:5px; font-weight:normal; letter-spacing:1px; cursor:pointer; font-family:'BlackLightning'; box-shadow:3px 3px 3px #e5e5e5;}
+.LCXZS .propose .propose-pub .propose-operation div:hover {box-shadow:none; background-color:red;}
+.LCXZS .propose .propose-pub .propose-operation div:last-child {margin-right:0px;}
+.LCXZS .propose .operation-update .operation-lower-title {font-size:18px; line-height:40px; height:40px; text-align:center; font-family:'BlackLightning';  margin-bottom:10px;}
+.LCXZS .propose .operation-update .operation-lower-option .option-title {float:left; width:100px; font-size:14px; line-height:40px; height:40px; }
+.LCXZS .propose .operation-update .operation-lower-option .option-text {float:left; margin-left:5px; height:40px; line-height:40px;}
+.LCXZS .propose .operation-update .operation-lower-option .option-text div {float:left; width:50px; text-align:center; height:40px; line-height:40px; margin-right:15px; background-color:red; color:#ffffff; border-radius:5px; cursor:pointer;}
+.LCXZS .propose .operation-update .operation-lower-option .option-text div:last-child {margin-right:0px;}
+.LCXZS .propose .operation-update .operation-lower-option .option-text div.option-select {background-color:#33cc66;}
+/* 羊毛列表 */
+/*
+ * 用户资料修改
+ * author:ben;
+ * 2016/03/18 11:10:21
+*/
+.LCXZS .user-modify h1 {height:40px; line-height:40px; text-align:center; font-size:26px; font-weight:normal; font-family:BlackLightning; }
+.LCXZS .user-modify .user-modify-tab {margin-top:30px;}
+.LCXZS .user-modify .user-modify-tab h3{position:relative; float:left; width:164px; height:54px; line-height:64px; font-size:16px; text-align:center; background-color:red; z-index:1; font-weight:normal; color:#ffffff; border-top-left-radius:20px; border-top-right-radius:20px; left:-20px; z-index:1; cursor:pointer;}
+.LCXZS .user-modify .user-modify-tab h3.avatar {background-color:#87CEFF; z-index:3;}
+.LCXZS .user-modify .user-modify-tab h3.materials {left:0px; z-index:4; }
+.LCXZS .user-modify .user-modify-tab h3.pw {background-color:#6A5ACD; left:-40px; z-index:2}
+.LCXZS .user-modify .user-modify-tab h3.accounts {left:-60px; z-index:1; background-color:#FF1493; }
+.LCXZS .user-modify .user-modify-text {padding:0 30px; border:3px solid red; padding-bottom:30px; height:540px;}
+.LCXZS .user-modify .user-modify-text ul {margin:0px; padding-top:20px;}
+.LCXZS .user-modify .user-modify-text ul .form-title {width:100px; text-align:right; margin-right:20px;}
+.LCXZS .user-modify .user-modify-text .materials-text {margin-left:160px;}
+.LCXZS .user-modify .user-modify-text .form-submit {margin-left:30px;}
+.LCXZS .user-modify .user-modify-text .pw-text {margin:50px 0; margin-left:160px;}
+.LCXZS .user-modify .user-modify-text .accounts-text {margin-top:20px; padding-right:30px;}
+.LCXZS .user-modify .user-modify-text .accounts-text .addaccounts {float:right;  width:100px; height:40px; line-height:40px; margin-bottom:30px; text-align:center; font-size:16px; color:#ffffff; background-color:#33cc66; border-radius:5px; font-family:BlackLightning; cursor:pointer; }
+.LCXZS .user-modify .user-modify-text .accounts-text .accountslist {clear:both; margin-top:30px;}
+.LCXZS .user-modify .user-modify-text .accounts-text .accountslist tr {border-bottom:none;}
+.LCXZS .user-modify .user-modify-text .accounts-text .accountslist tr:last-child {border-bottom:1px solid #e5e5e5;}
+.LCXZS .user-modify .user-modify-text .accounts-text .accountslist td {width:200px; text-align:center; font-size:14px; line-height:40px; border:1px solid #e5e5e5; border-right:none;  }
+.LCXZS .user-modify .user-modify-text .accounts-text .accountslist td:last-child {border-right:1px solid #e5e5e5;}
+.LCXZS .user-modify .user-modify-text .accounts-text .accountslist td.operation div {width:70px; height:25px; line-height:25px; text-align:center; margin:0 auto; font-size:12px; background-color:red; color:#ffffff; border-radius:5px; cursor:pointer;}
+.LCXZS .user-modify .user-modify-text .avatar-text {padding:50px 60px;}
+.LCXZS .user-modify .user-modify-text .avatar-text .old {float:left; width:125px; padding-right:30px; border-right:1px dashed #e5e5e5;}
+.LCXZS .user-modify .user-modify-text .avatar-text .old img {width:124px; height:124px;}
+.LCXZS .user-modify .user-modify-text .avatar-text .avatar-title {text-align:center; font-size:16px; line-height:35px; margin-bottom:15px;}
+.LCXZS .user-modify .user-modify-text .avatar-text .filebuttom {display:inline-block; float:right; margin-bottom:10px; font-size:14px; padding:5px 10px; line-height:35px; height:35px; text-align:center; background-color:#33cc66; color:#ffffff; -moz-box-shadow: inset 0 0 5px 5px #33CD00; -webkit-box-shadow: inset 0 0 5px 5px #33CD00; box-shadow: inset 0 0 5px 5px #33CD00; border-radius:5px; cursor:pointer; }
+.LCXZS .user-modify .user-modify-text .avatar-text #upload {position:relative; float:left; width:280px; padding-left:30px}
+.LCXZS .user-modify .user-modify-text .avatar-text #upload #preview img {width:125px; height:125px;}
+.LCXZS .user-modify .user-modify-text .avatar-text #upload .upload-buttom {position:absolute; top:90px; right:0px;}
+.LCXZS .user-modify .user-modify-text .avatar-text #upload .upload-buttom * {display:block; width:75px; height:40px; line-height:40px; font-size:16px; text-align:center; background-color:#33cc66; color:#ffffff; border-radius:5px; margin-bottom:10px; cursor:pointer;}
+.LCXZS .user-modify .user-modify-text .avatar-text #upload .upload-buttom label {margin-bottom:0px; background-color:red;}
+.LCXZS .user-modify .user-modify-text .avatar-text .imgerror {text-align:center; font-size:16px; color:red; height:35px; line-height:35px; margin-top:10px;}
+/* 用户资料修改end */
+
