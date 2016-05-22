@@ -1,0 +1,139 @@
+<include file="pub:header" />
+    <div class="propose" style="display:none;">
+        <div class="propose-text" style="display:none;">
+            <div class="propose-pub operation-total">
+                <div class="propose-operation clearfix">
+                    <div class="modify" rid='0'>修改</div>
+                    <div class="update-status">更新状态</div>
+                    <div class="delete">删除</div>
+                </div>
+                <div class="propose-result-button" >
+                    <a href="javascript:;" title="取消" class="result-reset">取消</a>
+                </div>
+            </div>
+            <div class="propose-pub operation-update" style="display:none;">
+                <div class="operation-lower-title">更新状态</div>
+                <div class="operation-lower-text">
+                    <div class="operation-lower-option clearfix">
+                        <div class="option-title">平台已返现</div>
+                        <div class="option-text">
+                            <div class="option-select" state='1'>是</div>
+                            <div  state='0'>否</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="propose-result-button" >
+                    <a href="javascript:;" title="提交" class="operation-lower-submit">提交</a>
+                    <a href="javascript:;" title="上一级" class="operation-lower-button">上一级</a>
+                </div>
+                <form action="__ROOT__/wool/handle" method="post" class="update-form">
+                    <input type="hidden" name="wool_type" value="update"/>
+                    <input type="hidden" name="rid" value=""/>
+                    <input type="hidden" name="state" value="0" />
+                </form>
+            </div>
+            <div class="propose-pub operation-delete" style="display:none;">
+                <div class="operation-lower-title">删除记录</div>
+                <div class="operation-lower-text">
+                    是否删除本记录？
+                </div>
+                <div class="propose-result-button" >
+                    <a href="javascript:;" title="提交" class="operation-lower-submit">是</a>
+                    <a href="javascript:;" title="上一级" class="operation-lower-button">上一级</a>
+                </div>
+                <form action="__ROOT__/wool/handle" method="post" class="delete-form">
+                    <input type="hidden" name="wool_type" value="delete"/>
+                    <input type="hidden" name="rid" value=""/>
+                    <input type="hidden" name="delete" value="1" />
+                </form>
+            </div>
+        </div>
+        <div class="propose-back"></div>
+    </div>
+    <div class="center wool-lists margin-30 clearfix">
+        <include file="pub:nav" />
+        <article class="wool-lists-text twbb-cont clearfix ">
+            <h1>羊毛列表</h1>
+            <div class="wool-lists-table">
+                <empty name="wool_lists">
+                    <div class="lists-empty">
+                        还没有羊毛记录呢，快去<a href="__ROOT__/wool/add" title="羊毛记录点">羊毛记录点</a>记录羊毛吧
+                    </div>
+                <else />
+                    <table>
+                        <tr>
+                            <th>账号</th>
+                            <th>平台名</th>
+                            <th>投资金额</th>
+                            <th class="expire">投资日期<br />到期时间</th>
+                            <th>期限</th>
+                            <th>平台返款</th>
+                            <th>羊头返利</th>
+                            <th>平台已回款</th>
+                            <th>羊头已返款</th>
+                            <th>操作</th>
+                        </tr>
+                        <foreach name="wool_lists" item="v" key="k">
+                            <tr rid='<{$v.rid}>'>
+                                <td><{$v.account}></td>
+                                <td><{$v.platform}></td>
+                                <td><{$v.investment}></td>
+                                <td class="expire"><{$v.investment_date}><br /><{$v.due_time}></td>
+                                <td><{$v.term}> 天</td>
+                                <td><{$v.platform_back}> 元</td>
+                                <td><{$v.sheep_rebate}> 元</td>
+                                <td><{$v.is_platform_back}> </td>
+                                <td><{$v.is_sheep_rebate}> </td>
+                                <td class="operation">操作</td>
+                            </tr>
+                        </foreach>
+                    </table>
+                    <div class="page"><{$page}></div>
+                </empty>
+                
+            </div>
+            
+        </article>
+    </div>
+<include file="pub:footer" />
+<script>
+$(function(){
+    $('.operation').on('click',function(){
+        $('.propose').show().find('.propose-text').show();
+        var rid = $(this).parent('tr').attr('rid');
+        $('.update-form input[name=rid] , .delete-form input[name=rid]').val(rid);
+        $('.propose-operation .modify').attr('rid',rid);
+    });
+    $('.propose-result-button .result-reset').on('click',function(){
+        $('.propose').hide().find('.propose-text').hide();
+    });
+    $('.propose-operation .modify').on('click',function(){
+        window.location.href = '__ROOT__/wool/list_modify/rid/'+$(this).attr('rid');
+    });
+    $('.update-status').on('click',function(){
+        $('.operation-total').hide();
+        $('.operation-update').show();
+    });
+    $('.operation-lower-button').on('click',function(){
+        $('.operation-total').show().siblings().hide();
+    });
+    $('.option-text div').on('click',function(){
+        $(this).addClass('option-select').siblings('div').removeClass('option-select');
+        var state = $(this).attr('state');
+
+        $('.update-form input[name=state]').val(state);
+    });
+    $('.operation-update .propose-result-button .operation-lower-submit').on('click',function(){
+        $('.update-form').submit();
+    });
+    $('.propose-operation .delete').on('click',function(){
+        $('.operation-total').hide();
+        $('.operation-delete').show();
+    });
+    $('.operation-delete .operation-lower-submit').on('click',function(){
+        $('.delete-form').submit();
+    });
+})
+</script>
+</body>
+</html>
