@@ -54,3 +54,8 @@ time:2016/04/03
 author:ben;
 
 注意了：由于我这个程序是讲url中的index.php去掉，所有要在Apache.conf中的LoadModule rewrite_module modules/mod_rewrite.so的备注（#）去掉。
+
+time:2016/05/23
+author:ben;
+
+将这些代码上传到GitHub中，方便以后管理，而且为了更好的学习（练习）sass（sass和less其实都是差不多，只是语法上面有点不同，大体上还是一样的。），所以将该项目的所有css都重构成sass。
