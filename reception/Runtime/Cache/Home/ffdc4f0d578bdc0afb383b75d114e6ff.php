@@ -15,7 +15,7 @@
                 <h1>TWBB</h1>
             </a>
             <div class="user-information">
-                <?php if($_SESSION["uid"] != ''): ?><a href="" title="<?php echo (session('username')); ?>"><?php echo ($_SESSION["username"]); ?></a>
+                <?php if($_SESSION["uid"] != ''): ?><a href="/TWBB/user/index" title="<?php echo (session('username')); ?>"><?php echo ($_SESSION["username"]); ?></a>
                     <a href="/TWBB/sign/out" title="退出">退出</a>
                 <?php else: ?>
                     <a href="/TWBB/sign/in" title="登录">登录</a>
@@ -47,10 +47,8 @@
     </div>
     <div class="center wool-add margin-30 clearfix">
         <nav class="nav">
-    <a href="" title="<?php echo (session('username')); ?>" class="user">
-        <?php if(empty($$Think["session"]["avatar"])): ?><img src="/TWBB/Public/img/login-touxiang.png" title="<?php echo (session('username')); ?>" alt="<?php echo (session('username')); ?>" />
-        <?php else: ?>
-            <img src="<?php echo (session('avatar')); ?>" title="<?php echo (session('username')); ?>" alt="<?php echo (session('username')); ?>" /><?php endif; ?>
+    <a href="/TWBB/user/index#avatar-box" title="<?php echo (session('username')); ?>" class="user">
+        <img src="/TWBB/<?php echo (session('avatar')); ?>" title="<?php echo (session('username')); ?>" alt="<?php echo (session('username')); ?>" />
     </a>
     <ul>
         <li><a href="/TWBB/wool/index" title="羊毛记录" ><img src="/TWBB/Public/img/nav-wool.png" title="羊毛记录" alt="羊毛记录" /></a></li>
@@ -134,24 +132,15 @@
     </div>
 </div>
 <script src="/TWBB/Public/js/jquery.js"></script>
+<!-- 自适应代码 -->
 <script>
- (function (doc, win) {
-    var docEl = doc.documentElement,
-        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-        recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            if(clientWidth>=640){
-                docEl.style.fontSize = '10px';
-            }else{
-                docEl.style.fontSize = 10 * (clientWidth / 640) + 'px';
-            }
-        };
-
-    if (!doc.addEventListener) return;
-    win.addEventListener(resizeEvt, recalc, false);
-    doc.addEventListener('DOMContentLoaded', recalc, false);
-})(document, window);
+// 根据body的高度判断是否用height:auto
+$(function(){
+    var bh = $('body').height();
+    if (bh < $('.LCXZS').height()) {
+        $('html').css('height','auto');
+    }
+});
 </script>
 <script src="/TWBB/Public/js/laydate/laydate.js"></script>
 <script>

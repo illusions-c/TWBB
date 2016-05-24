@@ -1,1 +1,1 @@
-<?php if (!defined('THINK_PATH')) exit();?>fsdfsdfsd
+<?php if (!defined('THINK_PATH')) exit();?>

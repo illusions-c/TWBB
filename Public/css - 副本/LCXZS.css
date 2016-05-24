@@ -9,10 +9,9 @@
  *  登录界面
  *  time:10/50/21;
 */
-html {height: 100%; width: 100%; font-family:'Microsoft YaHei'; outline: 0; -webkit-text-size-adjust:none;}
-body{font-size:12px; line-height:24px; font-family:"Microsoft YaHei","微软雅黑"; height: 100%; margin: 0; -webkit-user-select: none; position: relative; color:#656565; height:auto; background-size:100%; background: -moz-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -webkit-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -o-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -ms-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: linear-gradient(top, #87CEFF 0%, #FFF0F5 100%);}
+body{font-size:12px; line-height:24px; font-family:"Microsoft YaHei","微软雅黑"; color:#656565; background-size:100%; background: -moz-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -webkit-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -o-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: -ms-linear-gradient(top, #87CEFF 0%, #FFF0F5 100%); background: linear-gradient(top, #87CEFF 0%, #FFF0F5 100%);}
 .login-back { background-color:#000;} 
-.LCXZS {position:relative; height:auto;}
+.LCXZS {position:relative;}
 .LCXZS .header {height:40px; line-height:40px; background-color:#f0f4f7;}
 .LCXZS .center {width:960px; margin:0 auto; font-size:14px; color:#656565; }   /* 这里考虑到并没有太多内容，所以暂时定为960宽度 */
 .LCXZS .header .center .logo {display:inline-block; float:left; color:#656565;}
@@ -20,8 +19,9 @@ body{font-size:12px; line-height:24px; font-family:"Microsoft YaHei","微软雅�
 .LCXZS .header .center .logo img {float:left; margin-top:5px;}
 .LCXZS .header .center .user-information {float:right;}
 .LCXZS .header .center .user-information a {display:inline-block; float:left; width:80px; font-size:14px; color:#656565; text-align:center;  }
-/* 公共的部分内容 */
+/*公共的部分内容*/
 .LCXZS .twbb-cont , .LCXZS .form-cont {float:left; background-color:#ffffff; padding:35px; width:789px;  height:738px; border:1px solid #e5e5e5; border-left:none; border-top-right-radius:10px; border-bottom-right-radius:10px;}
+/**/
 .LCXZS .login {position:relative; float:none; width:280px; margin:10% auto; border-radius:10px; height:210px;} 
 .LCXZS .login.form-cont .form-input input {width:180px;}
 .LCXZS .form-cont li {margin-bottom:20px; height:40px; line-height:40px; font-size:14px; }
@@ -80,7 +80,7 @@ body{font-size:12px; line-height:24px; font-family:"Microsoft YaHei","微软雅�
 */
 .LCXZS article {background-color:#ffffff;}
 .LCXZS .center .nav {float:left; width:100px; background-color:#f0f4f7; height:750px; padding:30px 0; border-top-left-radius:10px; border-bottom-left-radius:10px;}
-.LCXZS .center .nav .user img {display:block; margin:0 auto; border-radius:50%; width:65px; height:65px; }
+.LCXZS .center .nav .user img {display:block; margin:0 auto; border-radius:50%;}
 .LCXZS .center .nav ul {margin-top:40px;}
 .LCXZS .center .nav ul li {height:65px; margin-bottom:15px;}
 .LCXZS .center .nav ul li img {display:block; margin:0 auto; width:45px; height:45px; border:2px solid ; border-radius:5px; padding:8px;} 
@@ -116,7 +116,7 @@ body{font-size:12px; line-height:24px; font-family:"Microsoft YaHei","微软雅�
 .propose .propose-text .propose-input p {color:red; text-align:left; margin-top:10px;}
 .propose .propose-text .propose-input .propose-confirm {display:block; width:100px; height:40px; margin-top:20px; line-height:40px; background-color:red; color:#ffffff; font-size:14px; text-align:center; margin:20px auto 0; border-radius:5px; }
 .propose .propose-text .propose-input .propose-confirm:hover {text-decoration:none;}
-.propose .propose-text .propose-pub div.propose-result-button {margin:10px auto; margin-top:20px;}
+.propose .propose-text .propose-pub div.propose-result-button {margin:10px auto; width:; margin-top:20px;}
 .propose .propose-text .propose-pub div.propose-result-button a {display:inline-block; width:80px; text-align:center; height:40px; line-height:40px; font-size:14px; background-color:#33cc66; color:#ffffff; border-radius:5px; text-decoration:none; margin-right:10px; }
 .propose .propose-text .propose-pub div.propose-result-button a:last-child {margin-right:0px; background-color:red;}
 .propose .propose-text .propose-result li {height:40px; line-height:40px;}
@@ -249,3 +249,4 @@ body{font-size:12px; line-height:24px; font-family:"Microsoft YaHei","微软雅�
 .LCXZS .user-modify .user-modify-text .avatar-text #upload .upload-buttom label {margin-bottom:0px; background-color:red;}
 .LCXZS .user-modify .user-modify-text .avatar-text .imgerror {text-align:center; font-size:16px; color:red; height:35px; line-height:35px; margin-top:10px;}
 /* 用户资料修改end */
+

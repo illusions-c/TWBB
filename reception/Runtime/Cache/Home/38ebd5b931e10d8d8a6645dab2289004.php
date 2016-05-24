@@ -15,7 +15,7 @@
                 <h1>TWBB</h1>
             </a>
             <div class="user-information">
-                <?php if($_SESSION["uid"] != ''): ?><a href="" title="<?php echo (session('username')); ?>"><?php echo ($_SESSION["username"]); ?></a>
+                <?php if($_SESSION["uid"] != ''): ?><a href="/TWBB/user/index" title="<?php echo (session('username')); ?>"><?php echo ($_SESSION["username"]); ?></a>
                     <a href="/TWBB/sign/out" title="退出">退出</a>
                 <?php else: ?>
                     <a href="/TWBB/sign/in" title="登录">登录</a>
@@ -77,7 +77,7 @@
     </div>
     <div class="center wool-lists margin-30 clearfix">
         <nav class="nav">
-    <a href="" title="<?php echo (session('username')); ?>" class="user">
+    <a href="/TWBB/user/index#avatar-box" title="<?php echo (session('username')); ?>" class="user">
         <img src="/TWBB/<?php echo (session('avatar')); ?>" title="<?php echo (session('username')); ?>" alt="<?php echo (session('username')); ?>" />
     </a>
     <ul>
@@ -126,11 +126,28 @@
     </div>
 </div>
 <script src="/TWBB/Public/js/jquery.js"></script>
+<!-- 自适应代码 -->
+<script>
+(function (doc, win) {
+    var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+    var clientWidth = $('body').width();
+    if (clientWidth < 960) {
+        if (!clientWidth) return;
+            docEl.style.fontSize = 100 * (clientWidth / 960 ) + 'px';
+        };
+    };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
 <script>
 // 根据body的高度判断是否用height:auto
 $(function(){
-    var hh = $('html').height();
-    if (hh <= 880) {
+    var lh = $('.LCXZS').height();
+    if (lh >= 880) {
         $('html').css('height','auto');
     }
 });

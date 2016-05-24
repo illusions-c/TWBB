@@ -193,50 +193,31 @@
 </div>
 </div>
 <script src="/TWBB/Public/js/jquery.js"></script>
+<!-- 自适应代码 -->
+<script>
+(function (doc, win) {
+    var docEl = doc.documentElement,
+    resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+    recalc = function () {
+    var clientWidth = $('body').width();
+    if (clientWidth < 960) {
+        if (!clientWidth) return;
+            docEl.style.fontSize = 100 * (clientWidth / 960 ) + 'px';
+        };
+    };
+    if (!doc.addEventListener) return;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+})(document, window);
+</script>
 <script>
 // 根据body的高度判断是否用height:auto
 $(function(){
     var lh = $('.LCXZS').height();
-    console.log(lh);
     if (lh >= 880) {
         $('html').css('height','auto');
     }
-});    
-        !(function(win, doc){
-    function setFontSize() {
-        // 获取window 宽度
-        // zepto实现 $(window).width()就是这么干的
-        var winWidth =  window.innerWidth;
-        // doc.documentElement.style.fontSize = (winWidth / 640) * 100 + 'px' ;
-        
-        // 2016-01-13 订正
-        // 640宽度以上进行限制 需要css进行配合
-        var size = (winWidth / 640) * 100;
-        doc.documentElement.style.fontSize = (size < 100 ? size : 100) + 'px' ;
-    }
- 
-    var evt = 'onorientationchange' in win ? 'orientationchange' : 'resize';
-    
-    var timer = null;
- 
-    win.addEventListener(evt, function () {
-        clearTimeout(timer);
- 
-        timer = setTimeout(setFontSize, 300);
-    }, false);
-    
-    win.addEventListener("pageshow", function(e) {
-        if (e.persisted) {
-            clearTimeout(timer);
- 
-            timer = setTimeout(setFontSize, 300);
-        }
-    }, false);
- 
-    // 初始化
-    setFontSize();
- 
-}(window, document));
+});
 </script>
 <script>
 $(function(){

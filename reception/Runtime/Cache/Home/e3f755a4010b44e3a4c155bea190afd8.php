@@ -15,7 +15,7 @@
                 <h1>TWBB</h1>
             </a>
             <div class="user-information">
-                <?php if($_SESSION["uid"] != ''): ?><a href="" title="<?php echo (session('username')); ?>"><?php echo ($_SESSION["username"]); ?></a>
+                <?php if($_SESSION["uid"] != ''): ?><a href="/TWBB/user/index" title="<?php echo (session('username')); ?>"><?php echo ($_SESSION["username"]); ?></a>
                     <a href="/TWBB/sign/out" title="退出">退出</a>
                 <?php else: ?>
                     <a href="/TWBB/sign/in" title="登录">登录</a>
@@ -59,7 +59,7 @@
     </div>
     <div class="center wool-index margin-30 clearfix">
         <nav class="nav">
-    <a href="" title="<?php echo (session('username')); ?>" class="user">
+    <a href="/TWBB/user/index#avatar-box" title="<?php echo (session('username')); ?>" class="user">
         <img src="/TWBB/<?php echo (session('avatar')); ?>" title="<?php echo (session('username')); ?>" alt="<?php echo (session('username')); ?>" />
     </a>
     <ul>
@@ -134,7 +134,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(empty($timeorder_list)): $__FOR_START_24931__=1;$__FOR_END_24931__=13;for($ii=$__FOR_START_24931__;$ii < $__FOR_END_24931__;$ii+=1){ ?><tr>
+                        <?php if(empty($timeorder_list)): $__FOR_START_10533__=1;$__FOR_END_10533__=13;for($ii=$__FOR_START_10533__;$ii < $__FOR_END_10533__;$ii+=1){ ?><tr>
                                     <th><?php echo ($ii); ?>月</th>
                                     <td>0</td>
                                     <td>0</td>
@@ -155,50 +155,15 @@
     </div>
 </div>
 <script src="/TWBB/Public/js/jquery.js"></script>
+<!-- 自适应代码 -->
 <script>
 // 根据body的高度判断是否用height:auto
 $(function(){
-    var lh = $('.LCXZS').height();
-    console.log(lh);
-    if (lh >= 880) {
+    var bh = $('body').height();
+    if (bh <= $('.LCXZS').height() && !$('.login').length) {
         $('html').css('height','auto');
     }
-});    
-        !(function(win, doc){
-    function setFontSize() {
-        // 获取window 宽度
-        // zepto实现 $(window).width()就是这么干的
-        var winWidth =  window.innerWidth;
-        // doc.documentElement.style.fontSize = (winWidth / 640) * 100 + 'px' ;
-        
-        // 2016-01-13 订正
-        // 640宽度以上进行限制 需要css进行配合
-        var size = (winWidth / 640) * 100;
-        doc.documentElement.style.fontSize = (size < 100 ? size : 100) + 'px' ;
-    }
- 
-    var evt = 'onorientationchange' in win ? 'orientationchange' : 'resize';
-    
-    var timer = null;
- 
-    win.addEventListener(evt, function () {
-        clearTimeout(timer);
- 
-        timer = setTimeout(setFontSize, 300);
-    }, false);
-    
-    win.addEventListener("pageshow", function(e) {
-        if (e.persisted) {
-            clearTimeout(timer);
- 
-            timer = setTimeout(setFontSize, 300);
-        }
-    }, false);
- 
-    // 初始化
-    setFontSize();
- 
-}(window, document));
+});
 </script>
 <!-- 下面的js文件必须下下来，要不是会加载很慢的 -->
 <script type="text/javascript" src="/TWBB/Public/js/highcharts.js"></script>
